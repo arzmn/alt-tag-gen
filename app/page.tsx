@@ -5,9 +5,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Dialog } from '@headlessui/react'
 import Features from './components/Features';
 import Logos from './components/Logos';
-import Header from './components/Header';
-import Footer from './components/Footer';
-
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -29,11 +26,11 @@ interface ResponseData {
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [imageData, setImageData] = useState(null);
+  const [imageData, setImageData] = useState<string | null>(null);
   const [finalResponse, setFinalResponse] = useState<ResponseData | null>(null)
   const [previewURL, setPreviewURL] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
-  const [imageType, setImageType] = useState(null)
+  const [imageType, setImageType] = useState<string | null>(null)
   const [errorMessage, setErrorMessage] = useState<string | null>('')
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,7 +79,7 @@ export default function Home() {
         const data = await response.json();
         setFinalResponse(data);
         console.log(data.content[0].text)
-      } catch (error: Response) {
+      } catch (error) {
         console.error("Error generating alt tag:", error);
         setErrorMessage('Invalid File format')
       }
@@ -103,11 +100,7 @@ export default function Home() {
   return (
     <>
       {/* ===========================================================HEADER AREA IS USELESS ========================================================= */}
-      
-      
-      
       <div className="bg-white">
-       
         <header className="absolute inset-x-0 top-0 z-50">
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">

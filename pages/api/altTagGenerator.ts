@@ -1,7 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Anthropic from "@anthropic-ai/sdk";
-import { error } from 'console';
-
 
 const anthropic = new Anthropic({
   apiKey: process.env["MY_API_KEY"]
@@ -44,7 +42,4 @@ export default async function handler(
       });
       console.log(msg);
       res.status(200).json(msg);
-     
-     
-    
 }
