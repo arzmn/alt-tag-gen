@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Dialog } from '@headlessui/react'
 import Features from './components/Features';
 import Logos from './components/Logos';
+import {toast, Toaster} from 'react-hot-toast';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -85,7 +86,7 @@ export default function Home() {
       }
       setLoading(false)
     } else {
-      alert("Please choose image")
+      toast.error('Oops 🤐 Please choose image!')
     }
   };
 
@@ -100,6 +101,7 @@ export default function Home() {
   return (
     <>
       {/* ===========================================================HEADER AREA IS USELESS ========================================================= */}
+     <Toaster/>
       <div className="bg-white">
         <header className="absolute inset-x-0 top-0 z-50">
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -292,11 +294,13 @@ export default function Home() {
                   <p className='text-white'>
                   {finalResponse?.content[0].text}
                   <button
-                    className="ml-2 text-gray-400 hover:text-white"
+                    className="ml-2 text-gray-400 hover:text-white "
+                    
                     onClick={handleCopyText}
                     title="Copy text"
+                    
                   >
-                    <IoCopyOutline className="inline-block w-5 h-5" />
+                    <IoCopyOutline className="inline-block w-5 h-5 transition-transform transform duration-200 hover:scale-110" />
                   </button>
                 </p>
                 </div>
