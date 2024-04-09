@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { IoArrowUndoOutline, IoCopyOutline, IoSparklesSharp } from "react-icons/io5";
+import { IoArrowUndoOutline, IoCopyOutline } from "react-icons/io5";
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Dialog } from '@headlessui/react'
 import Features from './components/Features';
@@ -216,17 +216,17 @@ export default function Home() {
               <p className="mt-5 text-lg leading-8 text-gray-600">
                 No need to describe image manaully! Use ai to write alt tag, optimized for Google and other search engines.
               </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
+              {/* <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="#"
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Free Trial
                 </a>
-                {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
-              </a> */}
-              </div>
+              </a>
+              </div> */}
 
             </div>
           </div>
@@ -274,7 +274,7 @@ export default function Home() {
               >
                 {loading ? (
                   <div className="animate-bounce">Generating...</div>
-                ) : (<div className='flex items-center justify-center gap-2'> Generate Alt Tag <IoSparklesSharp /></div>)
+                ) : (<div className='flex items-center justify-center gap-2'> Generate Alt Tag ✨</div>)
                 }
               </button>
               {loading && <div role="status" className="max-w-sm animate-pulse"><div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
