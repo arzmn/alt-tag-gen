@@ -21,9 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta property="og:image" content="files/homepage.png"/>
+        <meta property="twitter:image" content="files/homepage.png" />
 
       </head>
-      
       <body className={inter.className}>
         
         {children}
