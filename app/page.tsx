@@ -6,6 +6,7 @@ import { Dialog } from '@headlessui/react'
 import Features from './components/Features';
 import Logos from './components/Logos';
 import {toast, Toaster} from 'react-hot-toast';
+import { track } from '@vercel/analytics';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -59,10 +60,11 @@ export default function Home() {
   }
 
   const handleSubmit = async () => {
+    track('Signup');
     if (imageData) {
       setLoading(true)
-      console.log(imageData);
-      console.log(imageType);
+      // console.log(imageData);
+      // console.log(imageType);
       try {
         const response = await fetch("/api/altTagGenerator", {
           cache: 'no-store',
